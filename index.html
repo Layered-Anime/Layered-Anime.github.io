@@ -306,14 +306,14 @@ approaches fail to tackle these problems.
   		<a name="deep_dream"></a>
 
   	  	<center><h1>Samples of Layered Temporal Dataset<br></h1></center>
-<span style="font-size:24px"><center><b> Preprocessing & Postprocessing</b> </center></span><br>
+<span style="font-size:24px"><center><b>Data Process</b> </center></span><br>
 
   		  <table align=center width=850px>
 
   	              <td width=100px>
   					<center>
   						
-  	                	<span style="font-size:16px">Describe how's (1) clean up (locality, using homography) (2) blender engine reply the creation process).<br></span>
+  	                	<span style="font-size:16px">The meta-data describing the strokes that give rise to the artwork is collected from an online platform. The data is replayed through a rendering engine and captured in PSD format. Since there are flipping and warpping during the creation process, we calcuate the SIFT<a href="https://people.eecs.berkeley.edu/~malik/cs294/lowe-ijcv04.pdf">[6]</a> features for each time step and perform affine transform to align the intermediate frames with the finishing frame.<br></span>
 				</br>
 
 					</center>
@@ -437,7 +437,8 @@ approaches fail to tackle these problems.
   						<br>
   						
   	                	<span style="font-size:16px">For this task, the input is a sketch, and the output is a refined illustration. 
-<br>Our dataset enables generalized refining illustration using different layers and during the creation process.<br>APPROACH???!?!?!!?!</span>
+<br>Our dataset enables generalized refining illustration using different layers and during the creation process.<br>
+We adapt the model from MUNIT[4] for the refinement task. The model learns to recolor the content.</span>
 				</br>
 
 					</center>
@@ -529,14 +530,18 @@ colorization. ACM Transactions on Graphics 37(6) (Nov 2018).
 https://doi.org/https://doi.org/10.1145/3272127.3275090
     </p>
     <p style="width: 80%;">
-    [4]Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser,
-L., Polosukhin, I.: Attention is all you need. CoRR abs/1706.03762 (2017), http:
-//arxiv.org/abs/1706.03762
+    [4]Huang, Xun, et al. "Multimodal unsupervised image-to-image translation." Proceedings of the European conference on computer vision (ECCV). 2018.
     </p>
         <p style="width: 80%;">
     [5]Wang, T.C., Liu, M.Y., Zhu, J.Y., Tao, A., Kautz, J., Catanzaro, B.: High-resolution
 image synthesis and semantic manipulation with conditional gans. In: Proceedings
 of the IEEE Conference on Computer Vision and Pattern Recognition (2018)
+    </p>
+
+            <p style="width: 80%;">
+    [6]David G Lowe, “Distinctive Image Features from Scale-Invariant
+Keypoints,” International Journal of Computer Vision, vol.50, No. 2,
+2004, pp.91-110.
     </p>
 
     <br><br>
