@@ -192,17 +192,30 @@ for Anime Drawings</span><br/>
 
 
 
-  		  <table align=center width=850px>
+ 	<table align=center width=850px>
 	  		  <center><h1>Abstract</h1></center>
 	  		  <tr>
 	  		  	<td>
+
 	  		    </td>
 	  		  </tr>
 			</table>
 
-					write sth for abstract
+		In this project, we create a dataset of high-quality anime illustrations in PSD format (20,000 samples, ~1.6TB of raw size), which is useful for tackling self-supervised segmentation and generation refinement tasks.
+
+
+		The dataset consisting of high-quality anime illustrations voted by online users. For each illustration sample, we collect the underlying stroke data that gives rise to the finishing work and replay the data through a drawing engine to render a series of PSD (PhotoShop Document) filesthat capture the art creation process. PSD format contains composition and blending information for RGBA image layers, which is useful for production, and the temporality nature of our data allows us to refine the sketches autoregressively. 
+
+		We build a differentiable renderer for different channel blending modes
+		that allows us to explore self-supervised segmentation tasks. 
+		<br/>
+
+To show the merit of our dataset, we established baseline for generation task with existing models such as MUNIT<a href='https://arxiv.org/abs/1611.07004
+'>[4]</a> and Pix2Pix HD <a href='https://arxiv.org/pdf/1804.04732.pdf
+'>[5]</a> Our next stage of works will be customizing model for generation/refinement task and establishing segmentation baseline with existing models.
 
   		  <br><br>
+
 		  <hr>
 
   		  <table align=center width=1100px>
@@ -211,405 +224,16 @@ for Anime Drawings</span><br/>
 		  		  <table align=center width=800px>
 		  		    <tr>
 		              <td align=center width=800px>
-						<iframe width="800" height="450" src="https://youtu.be/mfDHpirgTus" frameborder="0" allowfullscreen></iframe>
+		              	<iframe width="800" height="450" src="https://www.youtube.com/embed/mfDHpirgTus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
 					  </td>
 					</tr>
 				  </table>
 				<br>
                 </tr>
   		  </table>
-
-        <!-- <center></center> -->
-  		  <br>
-		  <hr>
-
-
-  		  <!-- <table align=center width=550px> -->
-  		  <table align=center width=425px>
-	 		<center><h1>Paper and Supplementary Material</h1></center>
-  			  <tr>
-  	              <!--<td width=300px align=left>-->
-  	              <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
-				  <td><a href="https://arxiv.org/abs/1603.08511"><img class="layered-paper-big" style="height:175px" src="./resources/images/paper_pdf_thumb.png"/></a></td>
-				  <td><span style="font-size:14pt">Zhang, Isola, Efros.<br>
-				  Colorful Image Colorization.<br>
-				  In ECCV, 2016 (oral).<br>
-				  (hosted on <a href="https://arxiv.org/abs/1603.08511">arXiv</a>)</a>
-				  <!-- <td><span style="font-size:14pt">Zhang, Isola, Efros. Colorful Image Colorization. In ECCV, 2016. (hosted on arXiv) -->
-				  <span style="font-size:4pt"><a href="http://arxiv.org/pdf/1603.08511.pdf"><br></a>
-<!-- 				  <span style="font-size:14pt"><br><b>Primary revisions in v2</b>
-				  <span style="font-size:10pt"><br> &bull; ECCV 2016 Camera Ready
-				  <span style="font-size:10pt"><br> &bull; Self-supervision/representation learning experiments (see <b>Section 3.2</b>) -->
-				  <!-- <br> &bull; Loss function comparisons, with all models re-trained from scratch (see <b>Table 1</b>) -->
-				  </span>
-				  </td>
-  	              </td>
-              </tr>
-  		  </table>
-		  <br>
-
-		  <!-- <br> -->
-<!--   		  <table align=center width=200px>
-			  <tr>
-				  <td><span style="font-size:11pt"><a href="http://arxiv.org/pdf/1603.08511v1.pdf">Previous version [v1] [10MB]</a></td>
-				  <td><span style="font-size:12pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
-			  </tr>
-			  <tr>
-				  <td><span style="font-size:11pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
-			  </tr>
-		  </table> -->
-
-		  <table align=center width=600px>
-			  <tr>
-				  <td><span style="font-size:14pt"><center>
-				  	<a href="./resources/bibtex_eccv2016_colorization.txt">[Bibtex]</a>
-  	              </center></td>
-              </tr>
-  		  </table>
-
-		  <hr>
-
-  		  <a name="bw_legacy"></a>
-  		  <center><h1>Results on legacy black and white photos</h1></center>
-  		  We show results on legacy black and white photographs from renowned photographers Ansel Adams and Henri Cartier-Bresson, along with a set of miscellaneous photos.<br>
-
-  		  <!-- along with miscellaneous photos. -->
-  		  <br>
-  		  <table align=center width=1100px>
-  			  <tr>
-  	              <td width=300px>
-  					<center>
-  						<span style="font-size:22px"><a href='./resources/images/exs_sel_aa.jpg'>Ansel Adams</a></span><br>
-  	                	<a href="./resources/images/exs_sel_aa.jpg"><img onmouseover="this.src='./resources/images/exs_sel_aa_thumb_clr.jpg';" onmouseout="this.src='./resources/images/exs_sel_aa_thumb_bw.jpg';" src = "./resources/images/exs_sel_aa_thumb_bw.jpg" height = "250px"></a><br>
-  					<span style="font-size:14px">(hover for our results; click for full images)</span><br>
-  					<span style="font-size:14px">extention of Figure 15 from our paper</span></center>
-  	              </td>
-                  <td width=300px>
-  					<center>
-  						<span style="font-size:22px"><a href='./resources/images/exs_sel_hcb.jpg'>Henri Cartier-Bresson</a></span><br>
-                  		<a href="./resources/images/exs_sel_hcb.jpg"><img onmouseover="this.src='./resources/images/exs_sel_hcb_thumb_clr.jpg';" onmouseout="this.src='./resources/images/exs_sel_hcb_thumb_bw.jpg';" src = "./resources/images/exs_sel_hcb_thumb_bw.jpg" height = "250px"></a><br>
-						<span style="font-size:14px">(hover for our results; click for full images)</span><br>
-	  					<span style="font-size:14px">Figure 16 from our paper</span></center>
-  					</center>
-                  </td>
-                  <td width=250px>
-  					<center>
-  						<span style="font-size:22px"><a href='./resources/misc_examples.html'>Miscellaneous Photos</a></span><br>
-                  		<a href="./resources/misc_examples.html"><img onmouseover="this.src='./resources/images/exs_sel_misc_clr.jpg';" onmouseout="this.src='./resources/images/exs_sel_misc_bw.jpg';" src = "./resources/images/exs_sel_misc_bw.jpg" height = "250px"></a><br>
-						<span style="font-size:14px">(hover for our results; click for full images)</span><br>
-	  					<span style="font-size:14px">Figure 17 from our paper</span></center>
-  					</center>
-                  </td>
-
-                </tr>
-  		  </table>
-
-  		<br><br>  
-  	  	<hr>
-
-  		  <a name="perform_comp"></a>
-  		  <center><h1>Performance comparisons</h1></center>
-  		  Click the montage to the left to see our results on Imagenet validation photos (this is an extension of Figure 6 from our [v1] paper). Click the montage to the right to see results on a test set sampled from SUN (extension of Figure 12 in our [v1] paper). These images are random samples from the test set and are <i>not</i> hand-selected.<br>
-  		  <br>
-  		  <table align=center width=1000px>
-  			  <tr>
-  	              <td width=400px>
-  					<center>
-  						<span style="font-size:22px"><a href='./resources/imagenet_comparison.html'>Comparisons on Imagenet</a></span><br>
-  	                	<a href="./resources/imagenet_comparison.html"><img class="rounded" onmouseover="this.src='./resources/images/imagenet_montage_ours.jpg';" onmouseout="this.src='./resources/images/imagenet_montage_lum.jpg';" src = "./resources/images/imagenet_montage_lum.jpg" height = "400px"></a><br>
-  					<span style="font-size:16px">(hovering shows our results; click for additional examples)</span>
-					</center>
-  	              </td>
-                  <td width=400px>
-  					<center>
-  						<span style="font-size:22px"><a href='./resources/learch_comparison.html'>Comparisons on SUN</a></span><br>
-                  		<a href="./resources/learch_comparison.html"><img class="rounded" onmouseover="this.src='./resources/images/learch_montage_ours.jpg';" onmouseout="this.src='./resources/images/learch_montage_lum.jpg';" src = "./resources/images/learch_montage_lum.jpg" height = "400px"></a><br>
-						<span style="font-size:16px">(hovering shows our results; click for additional examples)</span>
-  					</center>
-                  </td>
-                </tr>
-  		  </table>
-		<br><br>	
-		We also provide an initial comparison against Cheng et al. 2015 <a href="./resources/deep_colorization_comparison.html">here</a>. We were unable to acquire code or results from the authors, so we simply ran our method on screenshots from the figures in the paper of Cheng et al. See Section 3 in the <a href="./resources/supp.pdf">supplementary pdf</a> for further discussion of the differences between our algorithm and that of Cheng et al.
-  		<br><br>  
-  	  	<hr>
-			  
-		<a name="vgg_res"></a>
-  	  	<center><h1>Semantic interpretability of results <br>
-  	  		<!-- Categories for which colorization most helps/hurts recognition -->
-  	  	</h1></center>
-		Here, we show the ImageNet categories for which our colorization helps and hurts the most on object classification. Categories are ranked according to the difference in performance of VGG classification on the colorized result compared to on the grayscale version. This is an extension of Figure 6 in the [v1] paper.<br><br>
-			<center>Click a category below to see our results on all test images in that category.</center><br>
-    		  <table align=center width=1100px>
-    			  <tr>
-					  <td colspan="2"><center><b>Top</b></center></td>
-					  <td></td>
-					  <td colspan="2"><center><b>Bottom</b></center></td>
-				  </tr>
-    	              <td width=200px>
-  					  <ol>
-  						  <li><a href="./resources/top_0_index.html">Rapeseed<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_0_rapeseed_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_1_index.html">Lorikeet<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_1_lorikeet_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_2_index.html">Cheeseburger<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_2_cheeseburger_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_3_index.html">Meat Loaf<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_3_meat_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_4_index.html">Pomegranate<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_4_pomegranate_teaser.jpg"/></a></li>
-					  </ol>
-				  </td>
-				  <td width=200px>
-					  <ol start="6">
-  						  <li><a href="./resources/top_5_index.html">Green Snake<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_5_green_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_6_index.html">Pizza<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_6_pizza_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_7_index.html">Yellow Lady's Slipper<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_7_yellow_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_8_index.html">Orange<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_8_orange_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/top_9_index.html">Goldfinch<br><img class="rounded" height=50px src="./resources/images/VGG_tests/top_9_goldfinch_teaser.jpg"/></a></li>
-  					  </ol>
-				  <td width=100px></td>
-  				  </td>
-    	              <td width=200px>
-  					  <ol start=991>
-  						  <li><a href="./resources/bot_9_index.html">Chain<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_9_chain_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/bot_8_index.html">Wok<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_8_wok_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/bot_7_index.html">Can opener<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_7_can_teaser.jpg"/></a></li>
-  						  <li><a href="./resources/bot_6_index.html">Water bottle<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_6_water_teaser.jpg"/></a></li>
-						  <li><a href="./resources/bot_5_index.html">Modem<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_5_modem_teaser.jpg"/></a></li>
-					  </ol>
-				  </td>
-				  <td width=200px>
-					  <ol start=996>
-						  <li><a href="./resources/bot_4_index.html">Standard Schnauzer<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_4_standard_teaser.jpg"/></a></li>
-						  <li><a href="./resources/bot_3_index.html">Pickelhaube<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_3_pickelhaube_teaser.jpg"/></a></li>
-						  <li><a href="./resources/bot_2_index.html">Half Track<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_2_half_teaser.jpg"/></a></li>
-						  <li><a href="./resources/bot_1_index.html">Barbershop<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_1_barbershop_teaser.jpg"/></a></li>
-						  <li><a href="./resources/bot_0_index.html">Military Uniform<br><img class="rounded" height=50px src="./resources/images/VGG_tests/bot_0_military_teaser.jpg"/></a></li>
-  					  </ol>
-  				  </td>
-  			  </tr>
-  		   </table>	  
-				
-		  <br>
-		  <hr>
-
-  		<a name="deep_dream"></a>
-
-  	  	<center><h1>Deep Dream Visualization<br>
-  	  		<!-- Categories for which colorization most helps/hurts recognition -->
-  	  	</h1></center>
-  		Alexander Mordvintsev visualized the contents of our network by applying the <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">Deep Dream</a> algorithm to each filter in each layer of our [v1] network. He has kindly shared his results with us! The deep-dream images are grayscale and colorized with out network. We found that the <a href="http://storage.googleapis.com/deepdream/visualz/colorize/009_conv4_3.html">conv4_3</a> layer had the most interesting structures. Click on each layer below to see the results, and let us know what you see!
-
-  		<br><br>
-
-<!--   		<table align=center width=1100px>
-  			<tr>
-  	        <td width=400px>
-		  		<center><h1>Deep Dream Visualization</h1></center>
- -->
-	  		  <table align=center width=1000px>
-	  			  <tr>
-	  	              <td width=200px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/001_conv1_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv1_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv1_2.jpg;" src = "./resources/images/deepdream_conv1_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/001_conv1_2.html'>conv1_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-	  	              </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/002_conv2_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv2_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv2_1.jpg;" src = "./resources/images/deepdream_conv2_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/002_conv2_1.html'>conv2_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/003_conv2_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv2_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv2_2.jpg;" src = "./resources/images/deepdream_conv2_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/003_conv2_2.html'>conv2_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/004_conv3_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv3_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv3_1.jpg;" src = "./resources/images/deepdream_conv3_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/004_conv3_1.html'>conv3_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/005_conv3_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv3_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv3_2.jpg;" src = "./resources/images/deepdream_conv3_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/005_conv3_2.html'>conv3_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-					  
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/006_conv3_3.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv3_3.jpg';" onmouseout="this.src='./resources/images/deepdream_conv3_3.jpg;" src = "./resources/images/deepdream_conv3_3.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/006_conv3_3.html'>conv3_3</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	                </tr>
-
-	  			  <tr>
-	  	              <td width=200px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/007_conv4_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv4_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv4_1.jpg;" src = "./resources/images/deepdream_conv4_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/007_conv4_1.html'>conv4_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-	  	              </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/008_conv4_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv4_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv4_2.jpg;" src = "./resources/images/deepdream_conv4_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/008_conv4_2.html'>conv4_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/009_conv4_3.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv4_3.jpg';" onmouseout="this.src='./resources/images/deepdream_conv4_3.jpg;" src = "./resources/images/deepdream_conv4_3.jpg" height = "150px"></a><br>
-	  						<span style="font-size:18px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/009_conv4_3.html'>conv4_3</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/010_conv5_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv5_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv5_1.jpg;" src = "./resources/images/deepdream_conv5_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/010_conv5_1.html'>conv5_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/011_conv5_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv5_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv5_2.jpg;" src = "./resources/images/deepdream_conv5_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/011_conv5_2.html'>conv5_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-					  
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/012_conv5_3.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv5_3.jpg';" onmouseout="this.src='./resources/images/deepdream_conv5_3.jpg;" src = "./resources/images/deepdream_conv5_3.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/012_conv5_3.html'>conv5_3</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	                </tr>
-
-	  			  <tr>
-	  	              <td width=200px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/013_conv6_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv6_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv6_1.jpg;" src = "./resources/images/deepdream_conv6_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/013_conv6_1.html'>conv6_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-	  	              </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/014_conv6_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv6_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv6_2.jpg;" src = "./resources/images/deepdream_conv6_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/014_conv6_2.html'>conv6_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/015_conv6_3.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv6_3.jpg';" onmouseout="this.src='./resources/images/deepdream_conv6_3.jpg;" src = "./resources/images/deepdream_conv6_3.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/015_conv6_3.html'>conv6_3</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/016_conv7_1.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv7_1.jpg';" onmouseout="this.src='./resources/images/deepdream_conv7_1.jpg;" src = "./resources/images/deepdream_conv7_1.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/016_conv7_1.html'>conv7_1</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/017_conv7_2.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv7_2.jpg';" onmouseout="this.src='./resources/images/deepdream_conv7_2.jpg;" src = "./resources/images/deepdream_conv7_2.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/017_conv7_2.html'>conv7_2</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-					  
-	  	              <td width=175px>
-	  					<center>
-	  						<a href="http://storage.googleapis.com/deepdream/visualz/colorize/018_conv7_3.html"><img class="rounded" onmouseover="this.src='./resources/images/deepdream_conv7_3.jpg';" onmouseout="this.src='./resources/images/deepdream_conv7_3.jpg;" src = "./resources/images/deepdream_conv7_3.jpg" height = "150px"></a><br>
-	  						<span style="font-size:14px"><a href='http://storage.googleapis.com/deepdream/visualz/colorize/018_conv7_3.html'>conv7_3</a></span><br>
-	  					<span style="font-size:16px"></span>
-						</center>
-					  </td>
-	                </tr>
-
-	  		  </table>
-
- 			</td>
-			</tr>
-		</table>
-
-		<br>
-		<hr>
-		<br>
-
-			  <a name="related_work"></a>
-			  <table align=center width=1100px>
-				  <tr>
-		              <td width=800px>
-						<left>
-
-	  		  <center><h1>User-Generated Examples</h1></center>
-
-	  		  We have received many interesting examples and applications, developed by users! Note that the video examples are run on a <i>per-frame</i> basis, with no temporal consistency enforced. If you have any examples you'd like to share, please email Richard Zhang at <em>rich.zhang at eecs.berkeley.edu</em>.
-
-	  		  <br><br>
-	  		  <!-- <br> -->
-
-		  		<span style="font-size:24px"><center><b> Videos </b> </center></span>
-
-		  		<center>Lukas Graham - 7 years <a href="http://www.dailymotion.com/video/k4PEXizTVwRXSoiOYvH">[Music Video]</a></center>
-
-				<!-- <span style="font-size:20px"><center>Lukas Graham - 7 years <a href="http://www.dailymotion.com/video/k1NRoJ1l9v3kIeiOYvH">[Music Video]</a></center></span> -->
-
-				<center>Impact (1949) <a href="http://whattogive.com/videoColourization/">[Clip]</a> <a href="http://sskwirrel.blogspot.com/2016/04/using-neural-networks-to-colour-archive.html">[Blog Post]</a></center>
-
-				<center>Dorothy Dandrige - Zoot Suit (1942) <a href="https://www.youtube.com/watch?v=tjWbLRoJ3tY">[Clip]</a></center>
-
-				<center>Seven Samurai (1954) <a href="https://www.youtube.com/watch?v=VeEAGipZQiY">[Clip]</a></center>
-
-				<br>
-
-		  		<span style="font-size:24px"><center><b> Applications </b> </center></span>
-
-				<center>Automatic colorizer Bot <a href="https://www.reddit.com/user/pm_me_your_bw_pics?sort=new">[Reddit]</a> <a href="http://imgur.com/a/ynSXr">[Gallery]</a> <a href="http://www.whatimade.today/our-frst-reddit-bot-coloring-b-2/">[Blog Post]</a> <a href="http://whatimade.today/two-weeks-of-colorizebot-conclusions-and-statistics/">[2 Week Update]</a></center>
-
-				<center>Reddit thread from /r/InternetIsBeautiful <a href="https://www.reddit.com/r/InternetIsBeautiful/comments/4t8cuk/use_deep_learning_algorithms_to_add_color_to/">[Link]</a> <a href="http://demos.algorithmia.com/colorize-photos/">[Demo]</a> <a href="http://blog.algorithmia.com/2016/07/17-best-images-reddit-colorized/">[Blog Post]</a></center>
-
-				<center>Colorizing an 1880 Glass Plate <a href="https://www.youtube.com/watch?v=gUGDhEd1c7I">[Video by Mathieu Stern]</a> <!-- <a href="http://petapixel.com/2016/08/03/colorizing-1880-glass-plate-neutral-network-photoshop/">[Petapixel Article]</a> --> </center>
-
-				<center>Colourful Past: Find and colorize historical photos <a href="http://www.colourfulpast.org/">[Link]</a></center>
-
-<!-- 	  		  		<br>
-					Ryan Dahl. <b>Automatic Colorization.</b> Jan 2016. <a href="http://tinyclouds.org/colorize/">[Website]</a><br>
- -->
-<!-- 					Aditya Deshpande, Jason Rock and David Forsyth. <b>Learning Large-Scale Automatic Image Colorization.</b> In <i>ICCV</i>, Dec 2015. <a href="http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Deshpande_Learning_Large-Scale_Automatic_ICCV_2015_paper.pdf">[PDF]</a><a href="http://vision.cs.illinois.edu/projects/lscolor/">[Website]</a><br> -->
-
-<!-- 					Zezhou Cheng, Qingxiong Yang, and Bin Sheng. <b>Deep Colorization.</b> In <i>ICCV</i>, Dec 2015. <a href="http://www.cs.cityu.edu.hk/~qiyang/publications/iccv-15.pdf">[PDF]</a><br> -->
-					
-			   		</left>
-				</td>
-			 </tr>
-		 </table>
-
-
-		<br>
-		<hr>
+<br>
+<hr>
 		<br>
 
   		  <a name="related_work"></a>
@@ -617,48 +241,286 @@ for Anime Drawings</span><br/>
   			  <tr>
   	              <td width=400px>
   					<left>
-	  		  <center><h1>Recent Related Work</h1></center>
+	  		  <center><h1>Related Work</h1></center>
+The success of modern computer vision approaches mostly attributes to the
+growing data. Richly annotated and cross-modal datasets nowadays open avenues to various research topics. These methods have also been applied to the
+anime domain, such as sketch colorization <a href='https://doi.org/https://doi.org/10.1145/3272127.3275090'>[3]</a> and image generation <a href='https://www.gwern.net/
+Faces'>[1]</a>. Existing
+datasets such as Danbooru <a href='https://www.gwern.net/Danbooru2020'>[2] </a>contain images of anime illustrations and tags
+(4.2m images, 130m tags, 3.4TB total), enabling conditioned generation on tags.
+However, real-world applications usually require more fine-grained control, such
+as layered editing and refinement. Due to lack of such data, current data-driven
+approaches fail to tackle these problems.
 
-	  		  There have been a number of works in the field of automatic image colorization in the last few months! We would like to direct you to these recent related works for comparison. For a more thorough discussion of related work, please see our <a href="http://arxiv.org/pdf/1603.08511.pdf">full paper</a>.
 
 	  		  <br><br>
 
 	  		  <!-- <br><br> -->
 
-	  		  		<span style="font-size:24px"><center><b> Concurrent Work </b> </center></span><br>
+	  		  		<span style="font-size:24px"><center><b> Danbooru2020</b> </center></span><br>
 
-					Gustav Larsson, Michael Maire, and Gregory Shakhnarovich. <b>Learning Representations for Automatic Colorization.</b> In <i>ECCV</i> 2016. <a href="http://arxiv.org/pdf/1603.06668.pdf">[PDF]</a><a href="http://people.cs.uchicago.edu/~larsson/colorization/">[Website]</a></br>
+  		  <table align=center width=850px>
+  			  <tr>
+  	              <td width=100px>
+  					<center>
+  	                	<a href="./images/danbooru2020.png"><img class="rounded" src = "./images/danbooru2020.png" height="200px"></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=100px>
+  					<center>
+  						
+  	                	<span style="font-size:16px"><a href="https://www.gwern.net/Danbooru2020#samples">[Website]</a> <br><br>Danbooru2020 is a large-scale anime image database with 4.2m+ images annotated with 130m+ tags; it can be useful for machine learning purposes such as image recognition and generation.<br></span>
+				</br>
 
-					Satoshi Iizuka, Edgar Simo-Serra, and Hiroshi Ishikawa. <b>Let there be Color!: Joint End-to-end Learning of Global and Local Image Priors for Automatic Image Colorization with Simultaneous Classification.</b> In <i>SIGGRAPH</i>, 2016. <a href="http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/data/colorization_sig2016.pdf">[PDF]<a href="http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/">[Website]</a></a></br>
+					</center>
+  	              </td>
+
+  		  </table>
+			</br>
 
 					<br><br>
+<span style="font-size:24px"><center><b> Style2paints</b> </center></span><br>
+	  		  		<table align=center width=850px>
+  			  <tr>
+  	              <td width=100px>
+  					<center>
+  	                	<a href="./images/style2paintspng"><img class="rounded" src = "./images/style2paints.png" height="200px"></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=100px>
+  					<center>
+  						
+  	                	<span style="font-size:16px"><a href="https://github.com/lllyasviel/style2paints">[Website]</a> <br><br>DStyle2paints V4 is the current best AI driven lineart colorization tool. Different from previous end-to-end image-to-image translation methods, style2paints V4 is the first system to colorize a lineart in real-life human workflow, and the outputs are layered.<br></span>
+				</br>
 
-	  		  		<span style="font-size:24px"><center><b> Previous Work </b> </center></span><br>
-					Ryan Dahl. <b>Automatic Colorization.</b> Jan 2016. <a href="http://tinyclouds.org/colorize/">[Website]</a><br>
+					</center>
+  	              </td>
 
-					Aditya Deshpande, Jason Rock and David Forsyth. <b>Learning Large-Scale Automatic Image Colorization.</b> In <i>ICCV</i>, Dec 2015. <a href="http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Deshpande_Learning_Large-Scale_Automatic_ICCV_2015_paper.pdf">[PDF]</a><a href="http://vision.cs.illinois.edu/projects/lscolor/">[Website]</a><br>
-	
-					Zezhou Cheng, Qingxiong Yang, and Bin Sheng. <b>Deep Colorization.</b> In <i>ICCV</i>, Dec 2015. <a href="http://www.cs.cityu.edu.hk/~qiyang/publications/iccv-15.pdf">[PDF]</a><br>
-					
-			   		</left>
-				</td>
-			 </tr>
-		 </table>
+  		  </table>
 		  <br>
 		  	
-  		  
+<hr>
+
+  		<a name="deep_dream"></a>
+
+  	  	<center><h1>Samples of Layered Temporal Dataset<br></h1></center>
+<span style="font-size:24px"><center><b> Preprocessing & Postprocessing</b> </center></span><br>
+
+  		  <table align=center width=850px>
+
+  	              <td width=100px>
+  					<center>
+  						
+  	                	<span style="font-size:16px">Describe how's (1) clean up (locality, using homography) (2) blender engine reply the creation process).<br></span>
+				</br>
+
+					</center>
+  	              </td>
+
+  		  </table>
+
+  		  <span style="font-size:24px"><center><b> Samples</b> </center></span><br>
+
+	  		  <table align=center width=1000px>
+	  			  <tr>
+	  	              <td width=330px>
+	  					<center>
+	  						<a href="./images/1.PNG"><img class="rounded" onmouseover="this.src='./images/1.PNG';" onmouseout="this.src='./images/1.PNG;" src = "./images/1.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Final Illustration</span><br>
+						</center>
+					  </td>
+	  	              <td width=330px>
+	  					<center>
+	  						<a href="./images/2.PNG"><img class="rounded" onmouseover="this.src='./images/2.PNG';" onmouseout="this.src='./images/2.PNG;" src = "./images/2.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 1 </span><br>
+						</center>
+					  </td>
+	  	              <td width=330px>
+
+	  					<center>
+	  						<a href="./images/3.PNG"><img class="rounded" onmouseover="this.src='./images/3.PNG';" onmouseout="this.src='./images/3.PNG;" src = "./images/3.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 2</span><br>
+						</center>
+					  </td>
+	                </tr>
+
+	  			  <tr>
+	  	              	  	              <td width=330px>
+	  					<center>
+	  						<a href="./images/4.PNG"><img class="rounded" onmouseover="this.src='./images/4.PNG';" onmouseout="this.src='./images/4.PNG;" src = "./images/4.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Final Illustration</span>
+						</center>
+					  </td>
+	  	              <td width=330px>
+	  					<center>
+	  						<a href="./images/5.PNG"><img class="rounded" onmouseover="this.src='./images/5.PNG';" onmouseout="this.src='./images/5.PNG;" src = "./images/5.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 1</span>
+						</center>
+					  </td>
+
+	  	              <td width=330px>
+	  					<center>
+	  						<a href="./images/6.PNG"><img class="rounded" onmouseover="this.src='./images/6.PNG';" onmouseout="this.src='./images/6.PNG;" src = "./images/6.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 2</span>
+						</center>
+					  </td>
+	                </tr>
+
+	  		  </table>
+	  		 <table align=center width=1000px>
+	  		  		  			  <tr>
+	  	              	  	              <td width=200px>
+	  					<center>
+	  						<a href="./images/7.PNG"><img class="rounded" onmouseover="this.src='./images/7.PNG';" onmouseout="this.src='./images/7.PNG;" src = "./images/7.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Final Illustration</span>
+						</center>
+					  </td>
+	  	              <td width=200px>
+	  					<center>
+	  						<a href="./images/8.PNG"><img class="rounded" onmouseover="this.src='./images/8.PNG';" onmouseout="this.src='./images/8.PNG;" src = "./images/8.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 1</span>
+						</center>
+					  </td>
+
+	  	              <td width=200px>
+	  					<center>
+	  						<a href="./images/9.PNG"><img class="rounded" onmouseover="this.src='./images/9.PNG';" onmouseout="this.src='./images/9.PNG;" src = "./images/9.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 2</span>
+						</center>
+					  </td>
+
+					  	  	              <td width=200px>
+	  					<center>
+	  						<a href="./images/10.PNG"><img class="rounded" onmouseover="this.src='./images/10.PNG';" onmouseout="this.src='./images/10.PNG;" src = "./images/10.PNG" height = "150px"></a><br>
+	  					<span style="font-size:16px">Layer 3</span>
+						</center>
+					  </td>
+	                </tr>
+	  		  </table>
+
+ 			</td>
+			</tr>
+		</table>
+
+		<br>
+
+		 
+
+<hr>
+		<br>
+
+  		  <a name="related_work"></a>
+  		  <table align=center width=1100px>
+  			  <tr>
+  	              <td width=400px>
+  					<left>
+	  		   <center><h1>Task Description & Approach</h1></center>
+	  		   We present 2 specific tasks that can be conqured by our layered temporal dataset. One is self-supervised generation refinmenet and the other is self-supervised segmentation. Along with the task description, we also describe the implementation details of our model for tackling the generation refinement task.
+	  		  <br><br>
+
+	  		  <!-- <br><br> -->
+
+	  		  		<span style="font-size:24px"><center><b> Self-supervised Generation Refinement </b> </center></span><br>
+
+  		  <table align=center width=850px>
+  			  <tr>
+  	              <td width=100px>
+  					<center>
+  	                	<a href="./images/generation.png"><img class="rounded" src = "./images/generation.png" height="200px"></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=100px>
+  					<center>
+  						<br>
+  						
+  	                	<span style="font-size:16px">For this task, the input is a sketch, and the output is a refined illustration. 
+<br>Our dataset enables generalized refining illustration using different layers and during the creation process.<br>APPROACH???!?!?!!?!</span>
+				</br>
+
+					</center>
+  	              </td>
+
+  		  </table>
+			</br>
+
+					<br>
+
+
+  		  <span style="font-size:24px"><center><b> Self-supervised Segmentation</b> </center></span><br>
+
+  		  <table align=center width=850px>
+  			  <tr>
+  	              <td width=100px>
+  					<center>
+  	                	<a href="./images/segmentation.png"><img class="rounded" src = "./images/segmentation.png" height="200px"></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=100px>
+  					<center><br>
+  	                	<span style="font-size:16px">For this task, the input is an illustration, and the output is a batch of segmented layers.
+<br>Our dataset enables fine-grained segmentation of layers on any illustration (unknown layer information).
+  						<br></span>
+				</br>
+
+					</center>
+  	              </td>
+
+  		  </table>
+			</br>
+
+
+		  <hr>
+
+  		  <a name="bw_legacy"></a>
+  		  <center><h1>Results on Generation Refinement Task</h1></center>
+  		  <center>We show results on using conditional generation model MUNIT.<a href='https://arxiv.org/abs/1611.07004
+'>[4]</a></center><br>
+
+  		  <!-- along with miscellaneous photos. -->
+  		  <br>
+  		  <table align=center width=1000px>
+  			  <tr>
+  	              <td width=500px>
+  					<center>
+  						<a href="./images/g1.png"><img src = "./images/g1.png" height="400px"></img></href></a><br>
+  
+  				</center>
+  	              </td>
+ 
+                </tr>
+  		  </table>
+  		    		  <br>
+  		  <table align=center width=800px>
+  			  <tr>
+  	              <td width=400px>
+  					<center>
+  						<a href="./images/g2.png"><img src = "./images/g2.png" height="300px"></img></href></a><br>
+ 
+  				</center>
+  	              </td>
+                </tr>
+  		  </table>
+
+  		<br><br>  
+  	  	
+		  
 		<br><br>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75863369-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<hr>
+<table align=center width=1100px>
+  			  <tr>
+  	              <td width=400px>
+  					<left>
+	  		  <center><h1>Contact</h1></center>
+	  		  <center>Please Email Ningyuan ZHENG () or Cheng-hsin Emily WUU () for any questions.<a href="http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Deshpande_Learning_Large-Scale_Automatic_ICCV_2015_paper.pdf">aa</a>.
+</center>
+			</left>
+		</td>
+			 </tr>
+		</table>
               
 </body>
 </html>
